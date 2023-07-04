@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: usermanagement-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: usermanagementservice
+  template:
+    metadata:
+      labels:
+        app: usermanagementservice
+    spec:
+      containers:
+        - name: usermanagementservice
+          image: meeran45/usermanagement:latest
